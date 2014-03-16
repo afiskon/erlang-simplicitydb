@@ -41,8 +41,7 @@ handle_call({{write, Value}, Filename, Backup}, _From, State) ->
     file:make_dir(filename:dirname(Filename)),
     {ok, Sync} = application:get_env(simplicitydb, sync),
 
-    % if something goes wrong, just restart a process
-    % such approach prevents resource leak
+    file:rename(Backup, Filename), % will do nothing if Backup doesn't exist
     file:rename(Filename, Backup),
     {ok, Fid} = file:open(Filename, [write, raw]),
     ok = file:write(Fid, Value),
