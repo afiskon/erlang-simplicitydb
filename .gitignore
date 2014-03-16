@@ -1,0 +1,9 @@
+*.beam
+*.swp
+*.deb
+ebin
+/deps/
+/build/
+/simplicitydb/
+erl_crash.dump
+test.config

@@ -1,0 +1,18 @@
+{application, simplicitydb,
+ [
+  {description, "SimplicityDB, simple file based key-value storage in pure Erlang"},
+  {vsn, git},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                  % lager
+                 ]},
+  {mod, { simplicitydb_app, []}},
+  {env, [
+    {dir, "./simplicitydb/"},
+    {pool_size, 32}, % 1 .. simplicitydb_utils:max_pool_size()
+    {sync, true},
+    {frozen, false}
+  ]}
+ ]}.
