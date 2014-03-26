@@ -13,6 +13,7 @@
     {dir, "./simplicitydb/"},
     {pool_size, 32}, % 1 .. simplicitydb_utils:max_pool_size()
     {sync, true},
-    {frozen, false}
+    {frozen, false},
+    {secret, <<"">>}
   ]}
  ]}.

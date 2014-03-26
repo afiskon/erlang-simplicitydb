@@ -56,7 +56,8 @@ is_frozen() ->
 
 call(Key, Action) ->
     BinaryKey = term_to_binary(Key),
-    Hash = simplicitydb_utils:hash32(BinaryKey),
+    {ok, Secret} = application:get_env(simplicitydb, secret),
+    Hash = simplicitydb_utils:hash32(<< Secret/binary, BinaryKey/binary >>),
     Path = simplicitydb_utils:hash_to_filepath(Hash),
     File = simplicitydb_utils:key_to_filename(BinaryKey),
     {ok, Dir} = application:get_env(simplicitydb, dir),
