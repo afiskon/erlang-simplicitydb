@@ -18,4 +18,4 @@ ok
 5>
 ```
 
-For more details see http://eax.me/erlang-simplicitydb/ and http://redd.it/20mo39
+For more details see https://eax.me/erlang-simplicitydb/ and https://redd.it/20mo39
